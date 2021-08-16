@@ -66,7 +66,7 @@ pathm4=paste(path,gse_num,foo[4],sep="/")
 
 #file.rename(list.files(path=pathm1,pattern = as.character(foo[1])), str_replace(list.files(path=pathm1),pattern = as.character(foo[1]), ""))
 ##check each folder,make sure there are 3 files named as barcodes.tsv.gz ,features.tsv.gz,matrix.mtx.gz,the files without the prefix name
-##for filename in *; do echo mv \"$filename\" \"${filename//GSM4142870_Patient1_/}\"; done > mv.pbs
+##for filename in *; do echo mv \"$filename\" \"${filename/GSE139522_Patient1_/}\"; done > mv.pbs
 
 
 data1 <- Read10X(data.dir = pathm1)
