@@ -1,5 +1,4 @@
-#setwd("/Users/ysong/Downloads/GSE139522_RAW/")
-#path="/Users/ysong/Downloads/GSE139522_RAW/"
+
 
 setwd("~/Download")
 path="~/Download"
