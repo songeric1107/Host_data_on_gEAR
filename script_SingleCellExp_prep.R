@@ -1,4 +1,4 @@
-#use r-3.6.0
+#use r-3.6.0, this script is an example to prepare the uploading profiles from SingleCellExperiemnt rds files
 library(Rtsne)
 library(SingleCellExperiment)
 library(CellTrails);library(scuttle)
