@@ -56,7 +56,7 @@ genes_creation <- function(obj,ensembl){
 
 #########################
 
-#genes=read.delim(file="/local/projects-t3/XRHUM2017/gear_dataset/gear_dataset_upload/process/batch11/mouse_ensembl_v99.txt",sep="\t",header=T,fill=T)
+
 mart = useMart( 'ensembl' )
 datasets <- listDatasets(mart)
 mart = useDataset( 'mmusculus_gene_ensembl' , mart = mart )
@@ -73,7 +73,7 @@ ensembl.dedup=ensembl[!duplicated(ensembl$gene_symbol),]
 
 
 
-path="/local/projects-t3/XRHUM2017/gear_dataset/gear_dataset_upload/process/batch11/SGNs/sgn_withoutunknown.RDS"
+path="withoutunknown.RDS"
 data <- readRDS(path)
 
 
