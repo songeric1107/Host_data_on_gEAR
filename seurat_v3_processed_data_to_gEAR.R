@@ -1,4 +1,4 @@
-suppressMessages(library("Seurat"));library(dplyr)
+suppressMessages(library("Seurat"));suppressMessages(library(dplyr))
 
 
 
@@ -8,8 +8,6 @@ suppressMessages(library("Seurat"));library(dplyr)
 metadata <- function(object,group){
   meta <- as.data.frame(cbind(row.names(object@meta.data), object@meta.data, Embeddings(object[["umap"]])))
   colnames(meta)[1] <- "observations"
- 
-  
   return(meta)
 }
 
@@ -62,19 +60,20 @@ datasets <- listDatasets(mart)
 mart = useDataset( 'mmusculus_gene_ensembl' , mart = mart )
 ensembl = getBM( attributes = c('ensembl_gene_id','external_gene_name') , mart=mart)
 names(ensembl)[2] = "gene_symbol"
+##human reference
+##mart = useDataset( 'hsapiens_gene_ensembl' , mart = mart )
 
 
 names(ensembl) = c("ensembl_ID","gene_symbol")
 ensembl.dedup=ensembl[!duplicated(ensembl$gene_symbol),]
 
+args <- commandArgs( TRUE )
+##provide the path of rds file
 
+file <- args[1]
 
-
-
-
-
-path="withoutunknown.RDS"
-data <- readRDS(path)
+#path="withoutunknown.RDS"
+data <- readRDS(file)
 
 
 ##create metadata sheet using function above
