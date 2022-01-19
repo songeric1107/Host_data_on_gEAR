@@ -1,11 +1,4 @@
----
-title: "prepare files"
-output: html_document
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## Prepare the files using the raw matrix from 10x platform
 
