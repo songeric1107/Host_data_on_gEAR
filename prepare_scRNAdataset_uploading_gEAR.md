@@ -107,6 +107,20 @@ count <- expression_matrix(data, ensembl.dedup)
 
 #if the “-“ is changed to “.” by R, using this script to replace “-“ to “.”
 colnames(count)=gsub("[.]","-",colnames(count))
+####prepare annotation
+
+mart = useMart( 'ensembl' )
+datasets <- listDatasets(mart)
+mart = useDataset( 'mmusculus_gene_ensembl' , mart = mart )
+ensembl = getBM( attributes = c('ensembl_gene_id','external_gene_name') , mart=mart)
+names(ensembl)[2] = "gene_symbol"
+##human reference
+##mart = useDataset( 'hsapiens_gene_ensembl' , mart = mart )
+
+
+names(ensembl) = c("ensembl_ID","gene_symbol")
+ensembl.dedup=ensembl[!duplicated(ensembl$gene_symbol),]
+
 
 
 ###############create gene matrix
