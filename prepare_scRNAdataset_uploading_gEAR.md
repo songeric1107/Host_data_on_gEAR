@@ -107,6 +107,9 @@ count <- expression_matrix(data, ensembl.dedup)
 
 #if the “-“ is changed to “.” by R, using this script to replace “-“ to “.”
 colnames(count)=gsub("[.]","-",colnames(count))
+
+
+
 ####prepare annotation
 
 mart = useMart( 'ensembl' )
