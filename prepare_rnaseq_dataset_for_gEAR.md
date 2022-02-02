@@ -52,22 +52,22 @@ Prepare 3 tab format for RNAseq dataset uploading
 			names(ensembl)[2] = "gene_symbol"
 			head(ensembl)
 
-####only keep the first ensemble ID for each gene
+	#only keep the first ensemble ID for each gene
 
 			ensembl.m=ensembl[!duplicated(ensembl$gene_symbol),]
 
-#merge by gene_symbol or ensembl ID 
+	#merge by gene_symbol or ensembl ID 
 
-				count.ann = merge(ensembl, count, by.x="gene_symbol", by.y="gene_symbol")
+			count.ann = merge(ensembl, count, by.x="gene_symbol", by.y="gene_symbol")
 
-				names(count.ann)[c(2,1)] = c("ensembl_ID", "gene_symbol")
+			names(count.ann)[c(2,1)] = c("ensembl_ID", "gene_symbol")
 
 
-				write.table(count.ann[-1], file= "expression.tab", sep="\t", quote=F, row.names=F)
+			write.table(count.ann[-1], file= "expression.tab", sep="\t", quote=F, row.names=F)
 
-				genes_to_use=count.ann[c(2,1)]
+			genes_to_use=count.ann[c(2,1)]
 	
-				write.table(genes_to_use,file= "genes.tab", sep="\t", quote=F,row.names=F)
+			write.table(genes_to_use,file= "genes.tab", sep="\t", quote=F,row.names=F)
 
 
 if the count file is raw count, basic normalization need to be completed before uploading
