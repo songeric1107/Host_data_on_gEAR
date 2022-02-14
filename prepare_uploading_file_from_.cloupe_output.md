@@ -3,13 +3,13 @@
 
 
 
-	1.Identify the TSNE/UMAP coordinate from cellranger output (sample_ID/ANALYSIS/20220201_cellranger.6.1.2_6451/sampleID_ILxxxxxxxxx/outs/analysis/), or you can export projection in Loupe Broswer version 6.0
+	1.Identify the TSNE/UMAP coordinate from cellranger output (sample_ID/ANALYSIS/20220201_cellranger.6.1.2_6451/sampleID_ILxxxxxxxxx/outs/analysis/umap/), or you can export projection from Loupe Broswer version > 6.0
 
-	2.Export the cluster name from cloupe by right click the 3 dots on the right top corner of "Graph-Based" window,or from "graphclust" folder
+	2.Identify the generate cluster name from "graphclust" folder(sample_ID/ANALYSIS/20220201_cellranger.6.1.2_6451/sampleID_ILxxxxxxxxx/outs/analysis/graphclust) or  export the cluster name from cloupe by click the 3 dots on the right top corner of "Graph-Based" window,or 
 
 	3.create the observation file with the 1st column named as "observations" and include umap/tsne coordinate. 
 
-	4.also include a column named as "cluster_lable" for primary analsyis
+	4.also include a column named as "cluster_lable" for primary analysis.
 
 	
 
