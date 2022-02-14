@@ -7,7 +7,7 @@
 	
 ####Prepare the expression matrix:
 
-        ```{r}
+```{r cars}
 	pathm1="filtered_feature_bc_matrix/"
 
 	data1 <- Read10X(data.dir = pathm1)
@@ -25,8 +25,7 @@
 
 
 	write.table(count.ann[c(2,1)],"genes.tab",sep="\t",quote=F,row.names=F)
-	
-        ```
+```
 
 
 
