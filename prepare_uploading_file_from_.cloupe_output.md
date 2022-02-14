@@ -22,32 +22,17 @@
 
 	pathm1="filtered_feature_bc_matrix/"
 
-
-
-
 	data1 <- Read10X(data.dir = pathm1)
 
 	data1 <- CreateSeuratObject(counts = data1 , project = "patient1",min.cells = 0, min.features = 0)
 
-
-
-
 	count=data.frame(GetAssayData(object = obj))
-
-
-
 
 	ann=read.table("pathm1/features.tsv.gz",sep="\t",header=T)
 
-
 	count.ann=merge(ann, count,by.y=0,by.x="V2")
 
-
-
 	write.table(count.ann[-1],"expression.tab",sep="\t",quote=F,row.names=F)
-
-
-
 
 	write.table(count.ann[c(2,1)],"genes.tab",sep="\t",quote=F,row.names=F)
 
