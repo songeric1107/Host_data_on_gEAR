@@ -5,9 +5,9 @@ Prepare uploadint matrix based on cloupe files from cellranger pipeline.
 	3.create the observation file with the 1st column named as "observations" and include umap/tsne coordinate. 
 	4.also include a column named as "cluster_lable" for primary analsyis
 	
-prepare the expression matrix:
+Prepare the expression matrix:
 
-	```
+```
 	pathm1="filtered_feature_bc_matrix/"
 
 	data1 <- Read10X(data.dir = pathm1)
@@ -26,7 +26,7 @@ prepare the expression matrix:
 
 	write.table(count.ann[c(2,1)],"genes.tab",sep="\t",quote=F,row.names=F)
 	
-	```
+```
 
 
 
