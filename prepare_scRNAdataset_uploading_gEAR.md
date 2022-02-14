@@ -1,6 +1,6 @@
 
 
-## Prepare the files using the raw matrix from 10x platform
+A. Prepare the files using the raw matrix from 10x platform
 
 1.	you can locate the files from the 10x cellranger output folder under raw_feature_bc_matrix folder, there are usually 3 compressed files, barcodes.tsv.gz  features.tsv.gz  matrix.mtx.gz
 
@@ -21,10 +21,11 @@ gunzip *.gz
 mv features.tsv genes.tsv
 ```
 
-
-## there should be 3 files for next step (MUST BE NAMED AS FOLLOWING): barcodes.tsv genes.tsv matrix.mtx
+```
+# there should be 3 files for next step (MUST BE NAMED AS FOLLOWING): barcodes.tsv genes.tsv matrix.mtx
 
 Compress all the files
+```
 ```{bash}
 tar -cf upload1.tar *.tsv *.mtx (windows)
 
@@ -32,8 +33,7 @@ COPYFILE_DISABLE=1 tar -cf upload1.tar *.tsv *.mtx (mac)
 
 ```
 
-
-2.	Prepare the files based on seurat processed output (all the command below are R script)
+B. Prepare the files based on seurat processed output (all the command below are R script)
 
 ```{r cars}
 suppressMessages(library("Seurat"));suppressMessages(library(dplyr)); suppressMessages(library(biomaRt))
@@ -138,7 +138,7 @@ write.table(obs, "observations.tab", sep = "\t", quote =  FALSE, row.names = FAL
  system( 'tar -czvf upload.tar.gz *.tab')
  
 ```
-3.	Prepare the files from SingleCellExperiment object 
+C. Prepare the files from SingleCellExperiment object 
 
 
 
