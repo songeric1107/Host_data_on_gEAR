@@ -19,7 +19,8 @@
 
 
 ```{r}
-
+	library(Seurat)
+	
 	pathm1="filtered_feature_bc_matrix/"
 
 	data1 <- Read10X(data.dir = pathm1)
