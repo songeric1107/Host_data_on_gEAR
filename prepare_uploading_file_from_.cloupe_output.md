@@ -26,6 +26,7 @@
 	data1 <- Read10X(data.dir = pathm1)
 
 	data1 <- CreateSeuratObject(counts = data1 , project = "patient1",min.cells = 0, min.features = 0)
+	data1 <- NormalizeData(object = data1)
 
 	count=data.frame(GetAssayData(object = data1))
 
