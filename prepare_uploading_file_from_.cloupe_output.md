@@ -27,7 +27,7 @@
 
 	data1 <- CreateSeuratObject(counts = data1 , project = "patient1",min.cells = 0, min.features = 0)
 
-	count=data.frame(GetAssayData(object = obj))
+	count=data.frame(GetAssayData(object = data1))
 
 	ann=read.table("pathm1/features.tsv.gz",sep="\t",header=T)
 
