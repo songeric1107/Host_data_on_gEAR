@@ -1,6 +1,6 @@
 prepare bigwig files from narrow peak file
 
-```{r setup, include=FALSE}
+```{bash}
 cut -f1,2 mm10.dna.toplevel.fa.fai > mm10.dna.toplevel.chromosome.sizes
 cut -f1,2,3,5 *narrowpeak > myFile.bedgraph
 sort -k1,1 -k2,2n myFile.bedgraph > myFile_sorted.bedgraph
@@ -11,7 +11,7 @@ sort -k1,1 -k2,2n myFile.bedgraph > myFile_sorted.bedgraph
 prepare bigbed files from narrow peak file
 
 
-```{r cars}
+```{bash}
 
 cut -f1,2 mm10.dna.toplevel.fa.fai > mm10.dna.toplevel.chromosome.sizes
 cut -f1,2,3,5 *narrowpeak > myFile.bedgraph
