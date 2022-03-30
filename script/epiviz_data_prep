@@ -1,4 +1,4 @@
-prepare bigwig files from narrow peak file
+1. prepare bigwig files from narrow peak file
 
 ```{bash}
 	cut -f1,2 mm10.dna.toplevel.fa.fai > mm10.dna.toplevel.chromosome.sizes
@@ -8,7 +8,7 @@ prepare bigwig files from narrow peak file
 
 ```
 
-prepare bigbed files from narrow peak file
+2.prepare bigbed files from narrow peak file
 
 
 ```{bash}
