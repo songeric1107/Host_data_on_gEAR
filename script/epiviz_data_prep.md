@@ -1,6 +1,6 @@
----
+
 title: "epiviz dataset_repare"
-output: html_document
+
 ---
 prepare bigwig files from narrow peak file
 
@@ -12,7 +12,6 @@ sort -k1,1 -k2,2n myFile.bedgraph > myFile_sorted.bedgraph
 
 ```
 
-## R Markdown
 prepare bigbed files from narrow peak file
 
 
