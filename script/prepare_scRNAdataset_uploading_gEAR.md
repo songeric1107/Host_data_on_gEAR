@@ -98,18 +98,6 @@ obs$cluster_label=obs$cell_type
 
 # Don’t put “,” or “  “ in the column name, otherwise, the multi-genes display function will have problems. 
 
-
-########create count matrix
-
-count <- expression_matrix(data, ensembl.dedup)
-
-#names(count)=gsub("X","",names(count))
-
-#if the “-“ is changed to “.” by R, using this script to replace “-“ to “.”
-colnames(count)=gsub("[.]","-",colnames(count))
-
-
-
 ####prepare annotation
 
 mart = useMart( 'ensembl' )
@@ -123,6 +111,19 @@ names(ensembl)[2] = "gene_symbol"
 
 names(ensembl) = c("ensembl_ID","gene_symbol")
 ensembl.dedup=ensembl[!duplicated(ensembl$gene_symbol),]
+
+
+
+########create count matrix
+
+count <- expression_matrix(data, ensembl.dedup)
+
+#names(count)=gsub("X","",names(count))
+
+#if the “-“ is changed to “.” by R, using this script to replace “-“ to “.”
+colnames(count)=gsub("[.]","-",colnames(count))
+
+
 
 
 
