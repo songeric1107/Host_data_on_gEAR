@@ -6,38 +6,42 @@
 
 
 #########using recount###
+```
+
 library("recount3")
 
 ## Obtain all available projects
-## Obtain all available projects
+
 projects.all <- rbind(
   recount3::available_projects("human"),
   recount3::available_projects("mouse")
 )
 
+```
 
 
 
-#proj_info1=subset(projects.all,organism=="human" & file_source == "gtex")
-
-###subset nerve dataset
-
+subset nerve dataset
+```
 proj_info <- subset(
   projects.all,
   project == "NERVE" & project_type == "data_sources" )
 
 # extract the dataset bsed on SRP ID
 #proj_info <- subset(projects.all,project == "SRP009615" & project_type == "data_sources")
+```
 
-
-
+```create the normalized count file
 
 rse_gene_nerve <- create_rse(proj_info)
 
 assay(rse_gene_nerve, "counts") <- transform_counts(rse_gene_nerve)
 
 count=data.frame(assay(rse_gene_nerve, "counts") )
+```
+create gene annotation file
 
+```
 gene.raw=data.frame(rowData(rse_gene_nerve))
 
 gene=gene.raw[grep("ENSEMBL",gene.raw$source),]
@@ -50,20 +54,36 @@ gene1=cbind(gene,foo)
 
 gene2=gene1[,c(11,7)]
 
+```
+
+create observation file
+
+```
+
 obs=data.frame(colData(rse_gene_nerve))
 
 count.all=merge(gene2,count,by=0)
 names(count.all)[2]="ensembl_id"
+```
 
+aggreate count file to single ensemble ID
+
+```
 
 exp.agg=aggregate(count.all[-c(1:3)],by=list(count.all$ensembl_id,count.all$gene_name),FUN=mean)
 
 names(exp.agg)[1:2]=c("ensembl_ID","gene_symbol")
+```
 
+
+save outputs
+```
 write.table(exp.agg,"expression.tab",sep="\t",quote=F)
-write.table(exp.agg[,c(1,2)],"expression.tab",sep="\t",quote=F)
-write.table(obs,"observation.tab",sep="\t",quote=F)
 
+write.table(exp.agg[,c(1,2)],"expression.tab",sep="\t",quote=F)
+
+write.table(obs,"observation.tab",sep="\t",quote=F)
+```
 
 
 
