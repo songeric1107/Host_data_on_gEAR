@@ -10,7 +10,7 @@ Prepare 3 tab format for RNAseq dataset uploading
 		rownames(count) = count$gene
 
 
-2. generate the observation file##################
+2. generate the observation file
 
 
 		options(repr.matrix.max.rows=50, repr.matrix.max.cols=200)
