@@ -1,23 +1,15 @@
----
-title: "svg"
-output: html_document
-date: '2022-07-27'
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-```{r cars}
+
+
 Graphical Editors:
   Inkscape: 
   comprehensive tutorial online for using Inkscape (https://inkscape.org/learn/)
 
 save the image as svg format
 
-```
 
-## Including Plots
+
 
 matrix link to svg
 
