@@ -28,10 +28,6 @@ example files:
   
   #/batch13/svg_mod/ronna_svg/c55bf1cd-8955-8b05-99fe-d7abdb694d97
   
-
-
-
-
 ```
 
 
