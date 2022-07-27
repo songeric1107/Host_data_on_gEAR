@@ -31,7 +31,7 @@ link the matrix with svg
 
 1. select the object to show the expression
 2. open the xml Editor to link to the columne name of the matrix
-![alt text](https://github.com/songeric1107/Host_data_on_gEAR/blob/main/img/add_link_to_svg1.jpg)
+![alt text](https://github.com/songeric1107/Host_data_on_gEAR/blob/main/img/add_link_to_svg1.jpg?raw=true)
 
 
 ```
