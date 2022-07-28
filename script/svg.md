@@ -18,7 +18,10 @@ matrix link to svg
 prepare the files for svg 
 example files:
   
-  #/batch13/svg_mod/ronna_svg/c55bf1cd-8955-8b05-99fe-d7abdb694d97
+  #/batch13/svg_mod/todo_gEAR/svg_mod/update/v7/
+  
+  prepare 3 tab files for svg link.
+  
   
 ```
 
@@ -36,3 +39,5 @@ link the matrix with svg
 ```
 <img src="https://github.com/songeric1107/Host_data_on_gEAR/blob/main/img/add_link_to_svg1.jpg">
 
+```{
+put the svg to google bucket "/home/jorvis/git/gEAR/www/datasets_uploaded/" with the same gEAR ID.
