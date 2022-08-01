@@ -21,6 +21,7 @@ example files:
   #/batch13/svg_mod/todo_gEAR/svg_mod/update/v7/
   
   prepare 3 tab files for svg link.
+  upload those 3 tab files to gEAR and keep the gEAR ID
   
   
 ```
@@ -33,7 +34,9 @@ example files:
 link the matrix with svg
 
 1. select the object to show the expression
-2. open the xml Editor to link to the columne name of the matrix
+2. open the xml Editor to link to the columne name of the matrix to "ID" or "class"
+3. make sure each path is not overlaped to each other
+4. make sure there is no color for the svg.
 
 
 ```
