@@ -2,16 +2,11 @@
 
 
 
-Graphical Editors:
+1. Graphical Editors:
   Inkscape: 
   comprehensive tutorial online for using Inkscape (https://inkscape.org/learn/)
 
-save the image as svg format
 
-
-
-
-matrix link to svg
 
 ```{r pressure, echo=FALSE}
 
