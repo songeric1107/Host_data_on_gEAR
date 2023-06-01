@@ -116,6 +116,41 @@ ensembl.dedup=ensembl[!duplicated(ensembl$gene_symbol),]
 
 ########create count matrix
 
+##if the sparse matrix is too big, use the funtion as following
+large_matrix_to_df <- function(m){
+  
+  iter = 1
+  step_size = 5000
+  
+  output = NULL
+  
+  while(iter + step_size < ncol(m)){
+    print(iter)
+    add_output = data.frame(as.matrix(m[,iter:(iter+step_size-1)]))
+    
+    if(is.null(output)){
+      output = add_output
+    }else{
+      output = cbind(output,add_output)
+    }
+    
+    iter = iter + step_size
+  }
+  
+  add_output = data.frame(as.matrix(m[,iter:ncol(m)]))
+  output = cbind(output,add_output)
+  
+  return (output)
+}
+
+t1.m=GetAssayData(object = data)
+
+count <- large_matrix_to_df(t1.m)
+
+
+
+######
+
 count <- expression_matrix(data, ensembl.dedup)
 
 #names(count)=gsub("X","",names(count))
