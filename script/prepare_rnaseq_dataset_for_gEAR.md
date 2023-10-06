@@ -44,7 +44,7 @@ Prepare 3 tab format for RNAseq dataset uploading
 
 
  Here we are using the mouse annotation database
-	
+	library("ensembldb")
 			mart = useMart( 'ensembl' )
 			datasets <- listDatasets(mart)
 			mart = useDataset( 'mmusculus_gene_ensembl' , mart = mart )
