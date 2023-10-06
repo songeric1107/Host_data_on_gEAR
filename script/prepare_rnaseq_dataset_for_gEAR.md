@@ -50,7 +50,7 @@ Prepare 3 tab format for RNAseq dataset uploading
 			mart = useMart( 'ensembl' )
 			datasets <- listDatasets(mart)
 			mart = useDataset( 'mmusculus_gene_ensembl' , mart = mart )
-                        #mart=useDataset('hsapiens_gene_ensembl",mart=mart)
+                        #mart=useDataset("hsapiens_gene_ensembl",mart=mart)
 			ensembl = getBM( attributes = c('ensembl_gene_id','external_gene_name') , mart=mart)
 			names(ensembl)[2] = "gene_symbol"
 			head(ensembl)
